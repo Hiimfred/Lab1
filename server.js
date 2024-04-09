@@ -50,7 +50,7 @@ app.post('/recipes', async (req, res) => {
     const { title, ingredients, instructions, cookingTime } = req.body
 
     if (!title || !ingredients || !instructions || !cookingTime) 
-        res.status(404).json({message: 'Please enter title, ingredients, instructions, cooking time.'});
+        res.status(400).json({message: 'Please enter title, ingredients, instructions, cooking time.'});
     
 
     const newRecipe = new recipes({
