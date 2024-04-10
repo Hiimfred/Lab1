@@ -1,0 +1,69 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+  
+  #recipe_form,
+  #update_form {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #recipe_form ul,
+  #update_form ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #recipe_form ul li,
+  #update_form ul li {
+    margin-bottom: 10px;
+  }
+  
+  #recipe_form label,
+  #update_form label {
+    display: block;
+  }
+  
+  #recipe_form input[type="text"],
+  #recipe_form input[type="number"],
+  #recipe_form textarea,
+  #update_form input[type="text"],
+  #update_form input[type="number"],
+  #update_form textarea {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  #recipe_form button[type="submit"],
+  #update_form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #recipe_form button[type="submit"]:hover,
+  #update_form button[type="submit"]:hover{
+    background-color: #0056b3;
+  }
+  
+  a button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  #form-btn {
+    position: relative;
+    left: 48%;
+  }
+  
+  a button:hover {
+    background-color: #0056b3;
+  }
