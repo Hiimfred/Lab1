@@ -12,7 +12,7 @@
                     <td>${recipe.cookingTime} minutes</td>
                     <td>
                         <button class="delete-btn" data-title="${recipe.title}"> Delete </button>
-                        <button class="update-btn" data-title="${recipe.title}"> Update </button>
+                        <button class="update-btn" data-title="${recipe.title}" data-ingredients="${recipe.ingredients}" data-instructions="${ recipe.instructions }" data-cookingTime="${ recipe.cookingTime}"> Update </button>
                     </td>
                 `;
                 body.appendChild(row);
@@ -27,12 +27,14 @@
                 });
             });
 
-        // work in progress för updatering av recepted
         const updateButton = document.querySelectorAll('.update-btn');
         updateButton.forEach(button => {
             button.addEventListener('click', () => {
                 const updateTitle = button.getAttribute('data-title')
-                window.location.href = `/updateForm.html?title=${encodeURIComponent(updateTitle)}`
+                const updateIngredients = button.getAttribute('data-ingredients')
+                const updateInstructions = button.getAttribute('data-instructions')
+                const updateCookingTime = button.getAttribute('data-cookingTime')
+                window.location.href = `/updateForm.html?title=${encodeURIComponent(updateTitle)}&ingredients=${updateIngredients}&instructions=${updateInstructions}&cookingTime=${updateCookingTime}`
             });
         }); 
     })
@@ -97,8 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const title = urlParams.get('title');
+    const ingredients = urlParams.get('ingredients')
+    const instructions = urlParams.get('instructions')
+    const cookingTime = urlParams.get('cookingTime')
 
     document.getElementById('title').value = title;
+    document.getElementById('ingredients').value = ingredients;
+    document.getElementById('cookingTime').value = cookingTime;
+    document.getElementById('instructions').value = instructions;
 
     const updateForm = document.getElementById('update_form');
 
