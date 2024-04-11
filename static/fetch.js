@@ -41,7 +41,7 @@
     .catch(err => console.error('Error fetching recipes', err))
 
 
-//funciton för att DELETE ett recept med title (fetchar)
+//funciton för att DELETE ett recept med title (fetchar delete)
 async function deleteRecipe(title) {
     try {
         const response = await fetch(`/recipes/${encodeURIComponent(title)}`, {
@@ -61,6 +61,7 @@ async function deleteRecipe(title) {
     }
 }
 
+//post från form till db (fetch post)
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('#recipe_form');
 
@@ -95,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 })
-
+//PUT, uppdaterar info + fyller fält med nuvarande data (fetch put)
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const title = urlParams.get('title');
